@@ -6,7 +6,6 @@ function Class(){};
 	var initializing = false
 	var fnTest = /xyz/.test(function(){xyz;}) ? /\b_super\b/ : /.*/;
 	 
-	
 	Class.extend = function(prop) {
 		var _super = this.prototype;
 		 
@@ -17,11 +16,7 @@ function Class(){};
 		
 		
 		for (var name in prop) {
-			
-			prototype[name] =
-				typeof prop[name] == "function"
-				&& typeof _super[name] == "function"
-				&& fnTest.test(prop[name])
+			prototype[name] = typeof prop[name] == "function" && typeof _super[name] == "function" && fnTest.test(prop[name]) 
 				?
 				(function(name, fn){
 					return function() {
@@ -60,6 +55,3 @@ function Class(){};
 		return Class;
 	};
 })();
-
-if(typeof(exports) !== 'undefined')
-	exports.Class = Class;
