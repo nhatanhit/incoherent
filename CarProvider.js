@@ -1,6 +1,6 @@
 var CarProvider = AbstractProvider.extend({
     init: function(options) {
-        if (empty(options)) {
+        if (typeof options === 'undefined') {
             var options = {
                 provider: 'Default Car Provider',
                 type: 'Car'
